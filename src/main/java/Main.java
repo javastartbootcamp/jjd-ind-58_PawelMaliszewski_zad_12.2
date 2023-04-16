@@ -9,11 +9,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
         File file = new File("employees.csv");
         Employee[] employees = Company.employeeListFromFile("employees.csv");
-        boolean statsExists = false;
+        boolean statsFileCreated = false;
         if (file.exists()) {
             File stats = new File("stats.txt");
-            statsExists = stats.createNewFile();
-
+            statsFileCreated = stats.createNewFile();
             FileWriter fileWriter = new FileWriter(stats);
             fileWriter.write("Średnia wypłata: " + CompanyStats.employeesAverageWages(employees) + "\r");
             fileWriter.write("Minimalna wypłata: " + CompanyStats.lowestIncomeEmployee(employees) + "\r");
@@ -23,7 +22,7 @@ public class Main {
             fileWriter.write("Liczba pracowników Management: " + CompanyStats.employeesInManagementDepartment(employees) + "\r");
             fileWriter.close();
         }
-        if (statsExists) {
+        if (statsFileCreated) {
             System.out.println("Utworzono plik stats.txt");
         }
     }
