@@ -1,5 +1,3 @@
-import employee.Employee;
-
 public class CompanyStats {
 
     static final String IT = "it";
@@ -37,7 +35,7 @@ public class CompanyStats {
     static int employeesInItDepartment(Employee[] employees) {
         int empCount = 0;
         for (Employee employee : employees) {
-            if (employee.getClass().getSimpleName().equalsIgnoreCase(IT)) {
+            if (employee.getDepartment().equalsIgnoreCase(IT)) {
                 empCount++;
             }
         }
@@ -47,7 +45,7 @@ public class CompanyStats {
     static int employeesInSupportDepartment(Employee[] employees) {
         int empCount = 0;
         for (Employee employee : employees) {
-            if (employee.getClass().getSimpleName().equalsIgnoreCase(SUPPORT)) {
+            if (employee.getDepartment().equalsIgnoreCase(SUPPORT)) {
                 empCount++;
             }
         }
@@ -57,7 +55,7 @@ public class CompanyStats {
     static int employeesInManagementDepartment(Employee[] employees) {
         int empCount = 0;
         for (Employee employee : employees) {
-            if (employee.getClass().getSimpleName().equalsIgnoreCase(MANAGEMENT)) {
+            if (employee.getDepartment().equalsIgnoreCase(MANAGEMENT)) {
                 empCount++;
             }
         }

@@ -1,5 +1,3 @@
-import employee.Employee;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         File file = new File("employees.csv");
-        Employee[] employees = Company.employeeListFromFile("employees.csv");
+        Employee[] employees = Company.employeesListFromFile("employees.csv");
         boolean statsFileCreated = false;
         if (file.exists()) {
             File stats = new File("stats.txt");
